@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-python
+  labels:
+    app: sample-python
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: sample-python
+  template:
+    metadata:
+      labels:
+        app: sample-python
+    spec:
+      containers:
+      - name: python-app
+        image: lakshya545/python-app
+        ports:
+        - containerPort: 8000
+
